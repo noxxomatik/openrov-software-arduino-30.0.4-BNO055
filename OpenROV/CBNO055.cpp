@@ -206,6 +206,46 @@ void CBNO055::Update( CCommand& commandIn )
 			NDataManager::m_navData.PITC	= euler.z();
 			NDataManager::m_navData.ROLL	= -euler.y();
         }
+
+        if( bno.GetVector( CAdaBNO055::VECTOR_ACCELEROMETER, accel ) )
+        {
+           // Values are now stored in accel.x, accel.y, accel.z
+           NDataManager::m_navData.ACCLX = accel.x();
+           NDataManager::m_navData.ACCLY = accel.y();
+           NDataManager::m_navData.ACCLZ = accel.z();
+        }
+
+        if( bno.GetVector( CAdaBNO055::VECTOR_MAGNETOMETER, mag ) )
+        {
+           // Values are now stored in mag.x, mag.y, mag.z
+           NDataManager::m_navData.MAGX = mag.x();
+           NDataManager::m_navData.MAGY = mag.y();
+           NDataManager::m_navData.MAGZ = mag.z();
+        }
+
+        if( bno.GetVector( CAdaBNO055::VECTOR_GYROSCOPE, gyro ) )
+        {
+           // Values are now stored in gyro.x, gyro.y, gyro.z
+           NDataManager::m_navData.GYROX = gyro.x();
+           NDataManager::m_navData.GYROY = gyro.y();
+           NDataManager::m_navData.GYROZ = gyro.z();
+        }
+
+        if( bno.GetVector( CAdaBNO055::VECTOR_LINEARACCEL, linAccel ) )
+        {
+           // Values are now stored in linAccel.x, linAccel.y, linAccel.z
+           NDataManager::m_navData.LACCLX = linAccel.x();
+           NDataManager::m_navData.LACCLY = linAccel.y();
+           NDataManager::m_navData.LACCLZ = linAccel.z();
+        }
+
+        if( bno.GetVector( CAdaBNO055::VECTOR_GRAVITY, grav ) )
+        {
+           // Values are now stored in grav.x, grav.y, grav.z
+           NDataManager::m_navData.GRAVX = grav.x();
+           NDataManager::m_navData.GRAVY = grav.y();
+           NDataManager::m_navData.GRAVZ = grav.z();
+        }
 	}
 }
 #endif

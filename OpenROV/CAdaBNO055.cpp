@@ -585,12 +585,11 @@ bool CAdaBNO055::SetSelectedRegisterPage( byte pageIdIn )
 
 bool CAdaBNO055::SetUpUnitsAndOrientation()
 {
-	// Select the output units
 	uint8_t unitSelect =	( 0 << 7 ) |	// Orientation = Android
 	                        ( 0 << 4 ) |	// Temperature = Celsius
 	                        ( 0 << 2 ) |	// Euler = Degrees
 	                        ( 0 << 1 ) |	// Gyro = Deg/s
-	                        ( 1 << 0 );		// Accelerometer = mg
+	                        ( 0 << 0 );		// Accelerometer = m/s²
 
 
 	bool ret = true;
@@ -706,7 +705,7 @@ bool CAdaBNO055::GetVector( EVectorType vectorTypeIn, imu::Vector<3>& vectorOut 
 		case VECTOR_ACCELEROMETER:
 		case VECTOR_LINEARACCEL:
 		case VECTOR_GRAVITY:
-			// 1m/s^2 = 100 LSB
+			// 1m/s^2 = 100 LSB (data sheet Table 3-17)
 			vectorOut[0] = ( ( double )x ) / 100.0;
 			vectorOut[1] = ( ( double )y ) / 100.0;
 			vectorOut[2] = ( ( double )z ) / 100.0;

@@ -14,6 +14,26 @@ struct TNavData
     float PITC;		// Pitch in degrees
     float YAW;		// Yaw in degrees
     float FTHR;		// % of power in forward thrust
+
+    float ACCLX;    // acceleration in m/s²
+    float ACCLY;
+    float ACCLZ;
+
+    float MAGX;     // magnetic field stregth in mT
+    float MAGY;
+    float MAGZ;
+
+    float GYROX;    // angular acceleration in deg/s
+    float GYROY;
+    float GYROZ;
+
+    float LACCLX;   // linear acceleration in m/s²
+    float LACCLY;
+    float LACCLZ;
+
+    float GRAVX;    // gravity in m/s²
+    float GRAVY;
+    float GRAVZ;
 };
 
 struct TEnvironmentData
