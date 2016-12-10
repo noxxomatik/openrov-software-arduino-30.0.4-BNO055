@@ -585,6 +585,7 @@ bool CAdaBNO055::SetSelectedRegisterPage( byte pageIdIn )
 
 bool CAdaBNO055::SetUpUnitsAndOrientation()
 {
+	// Select the output units (data sheet table 3-11)
 	uint8_t unitSelect =	( 0 << 7 ) |	// Orientation = Android
 	                        ( 0 << 4 ) |	// Temperature = Celsius
 	                        ( 0 << 2 ) |	// Euler = Degrees
