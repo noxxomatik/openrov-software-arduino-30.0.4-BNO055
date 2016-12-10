@@ -34,3 +34,4 @@ dist/
 *.vcxproj
 *.filters
 
+.idea/*
