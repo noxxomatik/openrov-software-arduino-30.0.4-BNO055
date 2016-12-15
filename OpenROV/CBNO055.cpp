@@ -18,6 +18,11 @@ namespace
 	CAdaBNO055 bno;
 
 	imu::Vector<3> euler;
+	imu::Vector<3> mag;
+    imu::Vector<3> gyro;
+    imu::Vector<3> accel;
+    imu::Vector<3> linAccel;
+    imu::Vector<3> grav;
 
 	void InitializeSensor()
 	{
